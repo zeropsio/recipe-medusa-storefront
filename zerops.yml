@@ -1,0 +1,15 @@
+storefront:
+  build:
+    base: [nodejs@14]
+    prepare:
+      - npm install -g next
+    build:
+      - yarn install
+      - yarn build
+    deploy:
+      - '.'
+    cache: ['node_modules']
+  run:
+    prepare:
+      - npm install -g next
+    start: yarn start
