@@ -56,7 +56,7 @@ const Product = ({ product }) => {
     <div className={styles.container}>
       <figure className={styles.image}>
         <div className={styles.placeholder}>
-          <Image
+          {/* <Image
             objectFit="cover"
             height="100%"
             width="100%"
@@ -64,7 +64,7 @@ const Product = ({ product }) => {
             loading="eager"
             src={product.thumbnail}
             alt={`${product.title}`}
-          />
+          /> */}
         </div>
       </figure>
       <div className={styles.info}>
