@@ -1,0 +1,37 @@
+zerops:
+  - setup: storefront
+    build:
+      base: nodejs@22
+      envVariables:
+        NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${medusa_zeropsSubdomain}
+        NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${RUNTIME_NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY}
+        NEXT_PUBLIC_BASE_URL: ${RUNTIME_zeropsSubdomain}
+        NEXT_PUBLIC_DEFAULT_REGION: ${RUNTIME_NEXT_PUBLIC_DEFAULT_REGION}
+        NEXT_PUBLIC_FEATURE_SEARCH_ENABLED: ${RUNTIME_NEXT_PUBLIC_FEATURE_SEARCH_ENABLED}
+        NEXT_PUBLIC_INDEX_NAME: ${RUNTIME_NEXT_PUBLIC_INDEX_NAME}
+      buildCommands:
+        - printenv
+        - yarn
+        - yarn build
+      deployFiles:
+        - .next
+        - package.json
+        - next.config.js
+        - node_modules
+        - public
+    run:
+      base: nodejs@22
+      start: yarn start
+      ports:
+        - port: 3000
+          httpSupport: true
+      envVariables:
+        NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${medusa_zeropsSubdomain}
+        NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: pk_c12edd887483b4e5d5949973dac4aa70d90957cacacc1ef3e805bd06df14aa4b
+        NEXT_PUBLIC_BASE_URL: ${zeropsSubdomain}
+        NEXT_PUBLIC_DEFAULT_REGION: us
+        NEXT_PUBLIC_FEATURE_SEARCH_ENABLED: false
+        NEXT_PUBLIC_SEARCH_APP_ID: xxx
+        NEXT_PUBLIC_SEARCH_ENDPOINT: http://127.0.0.1:7700
+        NEXT_PUBLIC_SEARCH_API_KEY: xxx
+        NEXT_PUBLIC_INDEX_NAME: products
