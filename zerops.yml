@@ -29,7 +29,7 @@ zerops:
           httpSupport: true
       envVariables:
         NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${medusa_zeropsSubdomain}
-        NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${medusa_publishableKey}
+        NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${medusa_PUBLISHABLE_KEY}
         NEXT_PUBLIC_BASE_URL: ${zeropsSubdomain}
         NEXT_PUBLIC_DEFAULT_REGION: de
         NEXT_PUBLIC_FEATURE_SEARCH_ENABLED: false
