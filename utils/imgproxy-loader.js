@@ -1,12 +1,6 @@
 // imageLoader.js
 import Imgproxy from 'imgproxy';
 
-console.log({
-  baseUrl: process.env.IMGPROXY_URL,
-  key: process.env.IMGPROXY_KEY,
-  salt: process.env.IMGPROXY_SALT,
-});
-
 const imgproxy = new Imgproxy({
   baseUrl: process.env.IMGPROXY_URL,
   key: process.env.IMGPROXY_KEY,
@@ -25,12 +19,13 @@ export default function loader({ src, width, quality }) {
       ? src
       : `${process.env.NEXT_PUBLIC_BASE_URL}${src}`;
 
-    console.log({ sourceUrl: sourceUrl });
-    return imgproxy
+    const processedUrl = imgproxy
       .builder()
-      .resize('fill', width || 0, 0, 0)
-      .quality(quality || 80)
+      .resize('fill', width || 800, width || 800, 0)
+      .quality(quality || 50)
       .generateUrl(sourceUrl);
+
+    return processedUrl;
   } catch (error) {
     console.error('Error generating imgproxy URL:', error);
     return src;
