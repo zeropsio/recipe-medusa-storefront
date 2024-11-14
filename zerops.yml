@@ -1,5 +1,5 @@
 zerops:
-  - setup: storefront
+  - setup: nextstore
     build:
       base: nodejs@22
       envVariables:
