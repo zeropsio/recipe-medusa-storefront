@@ -33,11 +33,9 @@ zerops:
           httpSupport: true
       envVariables:
         NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${medusa_zeropsSubdomain}
-        # NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${medusa_CHANNEL_PUBLISHABLE_KEY}
         NEXT_PUBLIC_BASE_URL: ${zeropsSubdomain}
         NEXT_PUBLIC_DEFAULT_REGION: de
         NEXT_PUBLIC_INDEX_NAME: products
-        NEXT_PUBLIC_IMGPROXY_URL: ${imgproxy_zeropsSubdomain}
         NEXT_PUBLIC_FEATURE_SEARCH_ENABLED: false
         IMGPROXY_KEY: ${imgproxy_IMGPROXY_KEY}
         IMGPROXY_SALT: ${imgproxy_IMGPROXY_SALT}
