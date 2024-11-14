@@ -21,7 +21,7 @@ export default function loader({ src, width, quality }) {
 
     const processedUrl = imgproxy
       .builder()
-      .resize('fill', width || 800, width || 800, 0)
+      .resize('fill', width || 800, width || 800, false)
       .quality(quality || 50)
       .generateUrl(sourceUrl);
 
