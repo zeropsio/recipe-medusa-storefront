@@ -37,9 +37,6 @@ zerops:
         NEXT_PUBLIC_DEFAULT_REGION: de
         NEXT_PUBLIC_INDEX_NAME: products
         NEXT_PUBLIC_FEATURE_SEARCH_ENABLED: false
-        IMGPROXY_KEY: ${imgproxy_IMGPROXY_KEY}
-        IMGPROXY_SALT: ${imgproxy_IMGPROXY_SALT}
-        IMGPROXY_URL: ${imgproxy_zeropsSubdomain}
         # # # # # # # # # # # # # # # # # # #
         # currently disabled as meilisearch #
         # is not supported in medusa v2 yet #
