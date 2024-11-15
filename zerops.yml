@@ -3,15 +3,15 @@ zerops:
     build:
       base: nodejs@22
       envVariables:
-        NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${medusa_zeropsSubdomain}
+        NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${MEDUSA_INSTANCE_URL}
         NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${medusa_CHANNEL_PUBLISHABLE_KEY}
-        NEXT_PUBLIC_BASE_URL: ${RUNTIME_zeropsSubdomain}
+        NEXT_PUBLIC_BASE_URL: ${NEXT_STORE_URL}
         NEXT_PUBLIC_DEFAULT_REGION: ${RUNTIME_NEXT_PUBLIC_DEFAULT_REGION}
         NEXT_PUBLIC_FEATURE_SEARCH_ENABLED: ${RUNTIME_NEXT_PUBLIC_FEATURE_SEARCH_ENABLED}
         NEXT_PUBLIC_INDEX_NAME: ${RUNTIME_NEXT_PUBLIC_INDEX_NAME}
         IMGPROXY_KEY: ${imgproxy_IMGPROXY_KEY}
         IMGPROXY_SALT: ${imgproxy_IMGPROXY_SALT}
-        IMGPROXY_URL: ${imgproxy_zeropsSubdomain}
+        IMGPROXY_URL: ${IMGPROXY_INSTANCE_URL}
       buildCommands:
         - yarn
         - yarn build
@@ -32,15 +32,15 @@ zerops:
         - port: 8000
           httpSupport: true
       envVariables:
-        NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${medusa_zeropsSubdomain}
-        NEXT_PUBLIC_BASE_URL: ${zeropsSubdomain}
+        NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${MEDUSA_INSTANCE_URL}
+        NEXT_PUBLIC_BASE_URL: ${NEXT_STORE_URL}
         NEXT_PUBLIC_DEFAULT_REGION: de
         NEXT_PUBLIC_INDEX_NAME: products
         NEXT_PUBLIC_FEATURE_SEARCH_ENABLED: false
         NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${medusa_CHANNEL_PUBLISHABLE_KEY}
         IMGPROXY_KEY: ${imgproxy_IMGPROXY_KEY}
         IMGPROXY_SALT: ${imgproxy_IMGPROXY_SALT}
-        IMGPROXY_URL: ${imgproxy_zeropsSubdomain}        
+        IMGPROXY_URL: ${IMGPROXY_INSTANCE_URL}
         # # # # # # # # # # # # # # # # # # #
         # currently disabled as meilisearch #
         # is not supported in medusa v2 yet #
